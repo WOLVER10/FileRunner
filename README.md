@@ -2,6 +2,16 @@
 
 一个轻量级的匿名文件分享工具，支持单文件、多文件和文件夹上传，通过 6 位数字取件码下载。
 
+## 截图
+
+| 首页 | 取件页 |
+|:---:|:---:|
+| ![首页](screenshot/首页.webp) | ![取件页](screenshot/取件页.webp) |
+
+| 后台首页 | 后台设置 |
+|:---:|:---:|
+| ![后台首页](screenshot/后台首页.webp) | ![后台设置](screenshot/后台设置页.webp) |
+
 ## 功能特性
 
 - **匿名上传**：无需注册登录，上传即获得取件码
@@ -26,15 +36,18 @@
 ### Docker 部署（推荐）
 
 ```bash
-# 克隆项目
-git clone https://github.com/your-username/FileRunner.git
-cd FileRunner
+# 创建项目目录
+mkdir filerunner && cd filerunner
+
+# 下载 docker-compose.yml 和 .env.example
+curl -O https://raw.githubusercontent.com/WOLVER10/FileRunner/main/docker-compose.yml
+curl -O https://raw.githubusercontent.com/WOLVER10/FileRunner/main/.env.example
 
 # 配置环境变量
 cp .env.example .env
-# 编辑 .env，设置管理员密码哈希
+# 编辑 .env，设置管理员密码
 
-# 启动
+# 启动（自动拉取镜像）
 docker compose up -d
 
 # 访问

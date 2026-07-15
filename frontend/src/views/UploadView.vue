@@ -278,7 +278,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { toast } from 'vue-sonner'
 import api from '../api'
 import { formatFileSize } from '../utils/format'
@@ -288,6 +288,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '
 import { Button } from '@/components/ui/button'
 
 const router = useRouter()
+const route = useRoute()
 
 interface FileWithMeta extends File {
   relativePath?: string
@@ -372,6 +373,10 @@ onMounted(async () => {
       }, 5000)
     }
   } catch { toast.error('加载配置失败') }
+  // Auto-open pickup section if ?pickup=1
+  if (route.query.pickup === '1') {
+    showPickup.value = true
+  }
 })
 
 onUnmounted(() => {

@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    image: ghcr.io/wolver10/filerunner:latest
     container_name: filerunner
     ports:
       - "8880:8000"

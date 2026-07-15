@@ -10,8 +10,7 @@ const router = createRouter({
     },
     {
       path: '/pickup',
-      name: 'pickup-code',
-      component: () => import('../views/PickupCodeView.vue'),
+      redirect: '/?pickup=1',
     },
     {
       path: '/get/:code',
