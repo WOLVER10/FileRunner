@@ -228,7 +228,7 @@
 
     <!-- Footer -->
     <footer class="py-4 text-center text-xs text-muted-foreground border-t border-border">
-      &copy; 2024 FileRunner. All rights reserved.
+      &copy; {{ new Date().getFullYear() }} FileRunner. All rights reserved.
     </footer>
   </div>
 

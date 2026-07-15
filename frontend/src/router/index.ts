@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('../views/UploadView.vue'),
     },
     {
+      path: '/pickup',
+      name: 'pickup-code',
+      component: () => import('../views/PickupCodeView.vue'),
+    },
+    {
       path: '/get/:code',
       name: 'pickup',
       component: () => import('../views/PickupView.vue'),
