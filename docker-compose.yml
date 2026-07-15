@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    container_name: filerunner
+    ports:
+      - "8880:8000"
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-change-me-to-a-random-string}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
+      - DATABASE_URL=sqlite:///./data/data.db
+      - UPLOAD_DIR=./uploads
+    restart: unless-stopped
